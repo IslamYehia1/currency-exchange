@@ -9,21 +9,52 @@
 }
 .wrapper {
   background: white;
-  display: flex;
-  gap: 10px;
-  padding: 10px;
+  padding: 2rem;
   border-radius: 10px;
+}
+.formWrapper {
+  color: black;
+  display: grid;
+  gap: 4px 16px;
+  grid-auto-flow: column;
+  grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr) auto minmax(
+      100px,
+      1fr
+    );
+  grid-template-rows: auto [input-row-start] auto [input-row-end] auto;
+  gap: 10px;
   // align-items: center;
   input {
     border: 1px solid #e9e8e8;
     background: white;
+    color: inherit;
     padding: 20px;
     border-radius: 10px;
   }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+.swapBtnWrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 .swapBtn {
-  width: 50px;
+  width: 2rem;
+  height: 2rem;
+  // height: 100%;
+
+  // padding: 50%;
   // height: 50px;
+  align-self: center;
   aspect-ratio: 1/1;
   border-radius: 50%;
   display: flex;

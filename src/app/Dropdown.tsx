@@ -1,6 +1,8 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import S from "./dropdown.module.scss";
+import UpArrow from "./up-arrow.svg";
+import DownArrow from "./down-arrow.svg";
 function useOutsideClick(ref, onClick) {
   useEffect(() => {
     /**
@@ -20,7 +22,7 @@ function useOutsideClick(ref, onClick) {
     };
   }, [ref]);
 }
-function Dropdown({ title, list, onSelect, selected }: any) {
+function Dropdown({ title, list, onSelect, selected, disabled }: any) {
   const [isListOpen, setIsListOpen] = useState(false);
   const wrapperRef = useRef(null);
   useOutsideClick(wrapperRef, () => setIsListOpen(false));
@@ -38,20 +40,32 @@ function Dropdown({ title, list, onSelect, selected }: any) {
     <div ref={wrapperRef} className={S.wrapper}>
       <button type="button" className={S.header} onClick={toggleList}>
         <span className="dd-header-title">{header}</span>
-        {isListOpen ? <span>U</span> : <span> D</span>}
+
+        {isListOpen ? (
+          <span className={S.caret}>
+            <DownArrow />
+          </span>
+        ) : (
+          <span className={S.caret}>
+            <UpArrow />
+          </span>
+        )}
       </button>
       {/* {isListOpen && ( */}
-      <div role="list" className={S.list}>
-        {list?.map((item: any, index: number) => (
-          <button
-            type="button"
-            className={S.listItem}
-            key={item.id}
-            onClick={() => handleSelect(index)}
-          >
-            {item.title} {item.selected && <div>U</div>}
-          </button>
-        ))}
+      <div className={`${S.listWrapper} ${isListOpen ? S.active : ""}`}>
+        <div role="list" className={S.list}>
+          {list?.map((item: any, index: number) => (
+            <button
+              type="button"
+              className={S.listItem}
+              disabled={disabled == index}
+              key={item.id}
+              onClick={() => handleSelect(index)}
+            >
+              {item.title} {item.selected && <div>U</div>}
+            </button>
+          ))}
+        </div>
       </div>
       {/* )} */}
     </div>
