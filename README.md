@@ -1,6 +1,7 @@
 # Currency Exchange app
 
 This is a currency exchange app where you can exchange currencies.
+Please visit [https://currency-exchange-jade-eight.vercel.app/](https://currency-exchange-jade-eight.vercel.app/) for a live demo.
 
 ## Enviroment variables: The .env.example file provided serves as an example environment file. For adding your API keys and other environment-specific configurations, create a file named .env.local in the root directory of the project and add the necessary environment variables there.
 
