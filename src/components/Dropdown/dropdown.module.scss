@@ -1,0 +1,124 @@
+@import "@/styles/variables";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100%;
+  width: 100%;
+  position: relative;
+
+  button {
+    padding: 1rem max(5%, 1rem);
+  }
+  .caret {
+    width: 0.7rem;
+  }
+}
+
+.listWrapper {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  // isolation: isolate;
+  overflow: hidden;
+  display: none;
+  z-index: 1004;
+  animation: listShadowAnimation 0.3s forwards;
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: $background;
+    inset: 0;
+    z-index: -1;
+    transform: scale(0);
+    transition: transform 0.5s;
+    transform-origin: top center;
+    animation: scaleAnimation 0.3s forwards;
+  }
+  button {
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+    color: $primary-text;
+    text-align: left;
+    position: relative;
+    height: 3rem;
+    &:disabled {
+      color: #9fa7b2;
+    }
+    // padding: 1rem;
+  }
+  .listItem:not(:disabled):hover {
+    background-color: #f5f7f7;
+  }
+}
+@keyframes listShadowAnimation {
+  from {
+    box-shadow: none;
+  }
+  to {
+    box-shadow: $secondary-shadow;
+  }
+}
+.list {
+  height: 100%;
+  // max-height: 500px;
+  max-height: 200px;
+
+  width: 100%;
+  position: relative;
+  z-index: 50;
+  top: 0;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  transition: transform 0.5s;
+  overflow: hidden;
+  opacity: 0;
+  animation: listAnimation 0.2s forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes listAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    overflow: auto;
+    height: 100%;
+  }
+}
+@keyframes scaleAnimation {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+.listWrapper.active {
+  display: flex;
+  align-items: center;
+  &::before {
+    // transform: scale(1);
+    height: 100%;
+  }
+}
+.header {
+  width: 100%;
+  height: 100%;
+  background-color: $background;
+  color: $primary-text;
+  border: 1px solid #e9e8e8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}

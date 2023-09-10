@@ -1,98 +1,67 @@
+@import "@/styles/variables";
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  padding: 6rem;
+  gap: 3rem;
+  // padding: 6rem;
+  padding: min(20%, 10rem) 2rem;
+  min-width: 286px;
   min-height: 100vh;
-  background-image: url("/BG.jpg");
+  background-image: linear-gradient(#365f9da6, #365f9dc9), url("/BG.jpg");
+  background-position: 50% 50%;
+  background-size: cover;
 }
 .wrapper {
-  background: white;
+  background: $background;
+  color: $primary-text;
+
   padding: 2rem;
   border-radius: 10px;
-}
-.formWrapper {
-  color: black;
-  display: grid;
-  gap: 4px 16px;
-  grid-auto-flow: column;
-  grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr) auto minmax(
-      100px,
-      1fr
-    );
-  grid-template-rows: auto [input-row-start] auto [input-row-end] auto;
-  gap: 10px;
-  // align-items: center;
-  input {
-    border: 1px solid #e9e8e8;
-    background: white;
-    color: inherit;
-    padding: 20px;
-    border-radius: 10px;
-  }
-  input::-webkit-outer-spin-button,
-  input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-
-  /* Firefox */
-  input[type="number"] {
-    -moz-appearance: textfield;
-  }
-}
-.swapBtnWrapper {
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-.swapBtn {
-  width: 2rem;
-  height: 2rem;
-  // height: 100%;
-
-  // padding: 50%;
-  // height: 50px;
-  align-self: center;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid gray;
-  background-color: white;
-  svg {
-    width: 50%;
-    color: blue;
-    // height : 100% ;
-  }
-}
-.dropdown {
   position: relative;
-  display: block;
-  margin-top: 0.5em;
-  padding: 0;
-  // background-color: DodgerBlue;
-  color: black;
-  display: flex;
-  flex-direction: column;
-  gap: 5%;
 }
 
-.dropdown {
-  select,
-  label {
-    font-family: AvenirNextCondensed-DemiBold, Corbel, "Lucida Grande",
-      "Trebuchet Ms", sans-serif;
+.result {
+  margin-top: 1.5rem;
+  color: $primary-text;
+  // height: 0;
+  animation: expandAnimation 0.5s linear;
+}
+@keyframes expandAnimation {
+  0% {
+    height: 0px;
+    opacity: 0;
+  }
+  100% {
+    height: 4rem;
+    opacity: 1;
   }
 }
-
 .inputGroup {
   display: flex;
   flex-direction: column;
   gap: 10px;
   label {
-    color: black;
+    color: $primary-text;
+  }
+}
+
+.loader {
+  color: $primary-text;
+}
+.error {
+  color: $primary-text;
+}
+
+@media only screen and (max-width: 800px) {
+  .main {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .wrapper {
+    width: 100%;
+  }
+  .resetBtn {
+    width: 100%;
   }
 }
