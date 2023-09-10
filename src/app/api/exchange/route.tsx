@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import conf from "@/config";
-console.log(conf.rapidKey, conf.rapidHost);
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const from = searchParams.get("from");

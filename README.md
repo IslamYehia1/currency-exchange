@@ -1,34 +1,73 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Currency Exchange app
 
-## Getting Started
+This is a currency exchange app where you can exchange currencies.
 
-First, run the development server:
+## Project Setup
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### Using Docker Compose
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Clone the project repository to your local machine:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   ````bash
+   git clone https://github.com/IslamYehia1/currency-exchange.git
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   ````
 
-## Learn More
+2. Navigate to the project directory:
 
-To learn more about Next.js, take a look at the following resources:
+   ````bash
+   cd currency-exchange
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ````
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. Start the application using Docker Compose:
 
-## Deploy on Vercel
+   ````
+   docker-compose up
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ````
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+4. Open your web browser and visit [http://localhost:3000](http://localhost:3000) to view the Next.js page.
+
+### Using npm Commands
+
+1. Clone the project repository to your local machine:
+
+   ````bash
+   git clone https://github.com/IslamYehia1/currency-exchange.git
+   ```
+
+   ````
+
+2. Navigate to the project directory:
+
+   ````bash
+   cd currency-exchange
+   ```
+
+   ````
+
+3. Install the project dependencies:
+
+   ````bash
+   npm ci
+   ```
+
+   ````
+
+4. Start the Next.js development server:
+
+   ````bash
+   npm run dev
+   ```
+
+   ````
+
+5. Open your web browser and visit [http://localhost:3000](http://localhost:3000) to view the Next.js page.
+
+Make sure to replace `https://github.com/IslamYehia1/currency-exchange.git` with the actual URL of your project repository, and `<project-directory>` with the name or path of your Next.js project directory.
+
+Feel free to reach out if you have any further questions!
