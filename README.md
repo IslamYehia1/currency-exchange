@@ -13,27 +13,21 @@ The .env.example file provided serves as an example environment file. For adding
 
 1. Clone the project repository to your local machine:
 
-   ````bash
+   ```bash
    git clone https://github.com/IslamYehia1/currency-exchange.git
    ```
 
-   ````
-
 2. Navigate to the project directory:
 
-   ````bash
+   ```bash
    cd currency-exchange
    ```
 
-   ````
-
 3. Start the application using Docker Compose:
 
-   ````
+   ```
    docker-compose up
    ```
-
-   ````
 
 4. Open your web browser and visit [http://localhost:3000](http://localhost:3000) to view the Next.js page.
 
@@ -41,35 +35,27 @@ The .env.example file provided serves as an example environment file. For adding
 
 1. Clone the project repository to your local machine:
 
-   ````bash
+   ```bash
    git clone https://github.com/IslamYehia1/currency-exchange.git
    ```
 
-   ````
-
 2. Navigate to the project directory:
 
-   ````bash
+   ```bash
    cd currency-exchange
    ```
 
-   ````
-
 3. Install the project dependencies:
 
-   ````bash
+   ```bash
    npm ci
    ```
 
-   ````
-
 4. Start the Next.js development server:
 
-   ````bash
+   ```
    npm run dev
    ```
-
-   ````
 
 5. Open your web browser and visit [http://localhost:3000](http://localhost:3000) to view the Next.js page.
 
