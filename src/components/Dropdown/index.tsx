@@ -41,7 +41,7 @@ function Dropdown({
 }: propsT) {
   const [isListOpen, setIsListOpen] = useState(false);
   const wrapperRef = useRef(null);
-  const header: string = (list && selected !==null && list[selected] !== null) || title || "";
+  const header: string = (list && selected !==null && list[selected]) || title || "";
   useOutsideClick(wrapperRef, () => setIsListOpen(false));
 
   const handleSelect = (index: number) => {
