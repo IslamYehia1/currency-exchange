@@ -32,7 +32,7 @@ function ExchangeForm({ list, onResult, onReset, onError, onLoading }: propsT) {
     setToCurrency(srcCurrencyTemp);
   }
   async function handleSubmit() {
-    if (!(list && fromCurrency && toCurrency && amount)) return;
+    if (!(list && fromCurrency !== null && toCurrency !== null && amount)) return;
     setShowPrompt(false);
     if (onLoading) onLoading();
     setIsLoading(true);
