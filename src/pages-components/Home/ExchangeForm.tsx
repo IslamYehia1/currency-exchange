@@ -20,7 +20,7 @@ function ExchangeForm({ list, onResult, onReset, onError, onLoading }: propsT) {
   const [isLoading, setIsLoading] = useState(false);
   const [showPrompt, setShowPrompt] = useState(true);
   useEffect(() => {
-    if (fromCurrency !== null && toCurrency !==null && amount && list) return;
+    if (fromCurrency === null || toCurrency === null || !amount || !list) return;
     const getData = setTimeout(() => {
       handleSubmit();
     }, 2000);
